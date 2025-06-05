@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    android:background="@color/background_gray">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="24dp">
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/back"
+            android:background="@color/back_btn"
+            android:scaleType="centerInside"/>
+
+        <!-- 제목 -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="수동 번호 생성"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#34C759"
+            android:gravity="center"/>
+
+        <!-- 오른쪽 여백을 위한 투명한 뷰 -->
+        <View
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+    </LinearLayout>
+
+        <!-- 선택된 번호 표시 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="20dp"
+            android:layout_marginBottom="24dp"
+            android:elevation="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="선택된 번호"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_dark"
+                android:layout_marginBottom="16dp" />
+
+            <LinearLayout
+                android:id="@+id/layout_selected_numbers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_selected1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="?"
+                    android:gravity="center"
+                    android:background="@drawable/lotto_ball_empty"
+                    android:textColor="@color/text_gray"
+                    android:textStyle="bold"
+                    android:layout_marginHorizontal="10dp" />
+
+                <TextView
+                    android:id="@+id/tv_selected2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="?"
+                    android:gravity="center"
+                    android:background="@drawable/lotto_ball_empty"
+                    android:textColor="@color/text_gray"
+                    android:textStyle="bold"
+                    android:layout_marginHorizontal="10dp" />
+
+                <TextView
+                    android:id="@+id/tv_selected3"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="?"
+                    android:gravity="center"
+                    android:background="@drawable/lotto_ball_empty"
+                    android:textColor="@color/text_gray"
+                    android:textStyle="bold"
+                    android:layout_marginHorizontal="10dp" />
+
+                <TextView
+                    android:id="@+id/tv_selected4"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="?"
+                    android:gravity="center"
+                    android:background="@drawable/lotto_ball_empty"
+                    android:textColor="@color/text_gray"
+                    android:textStyle="bold"
+                    android:layout_marginHorizontal="10dp" />
+
+                <TextView
+                    android:id="@+id/tv_selected5"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="?"
+                    android:gravity="center"
+                    android:background="@drawable/lotto_ball_empty"
+                    android:textColor="@color/text_gray"
+                    android:textStyle="bold"
+                    android:layout_marginHorizontal="10dp" />
+
+                <TextView
+                    android:id="@+id/tv_selected6"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="?"
+                    android:gravity="center"
+                    android:background="@drawable/lotto_ball_empty"
+                    android:textColor="@color/text_gray"
+                    android:textStyle="bold"
+                    android:layout_marginHorizontal="10dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_selection_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0/6 선택됨"
+                android:textSize="14sp"
+                android:textColor="@color/text_gray"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+
+        <!-- 번호 선택 그리드 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="15dp"
+            android:layout_marginBottom="20dp"
+            android:elevation="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="번호를 선택하세요 (6개)"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_dark"
+                android:layout_marginBottom="16dp" />
+
+            <!-- 1-7 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="8dp">
+
+                <TextView android:id="@+id/btn_num_1" android:layout_width="40dp" android:layout_height="40dp" android:text="1" android:gravity="center" android:background="@drawable/lotto_ball_empty" android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_2" android:layout_width="40dp" android:layout_height="40dp" android:text="2" android:gravity="center" android:background="@drawable/lotto_ball_empty" android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_3" android:layout_width="40dp" android:layout_height="40dp" android:text="3" android:gravity="center" android:background="@drawable/lotto_ball_empty" android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_4" android:layout_width="40dp" android:layout_height="40dp" android:text="4" android:gravity="center" android:background="@drawable/lotto_ball_empty" android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_5" android:layout_width="40dp" android:layout_height="40dp" android:text="5" android:gravity="center" android:background="@drawable/lotto_ball_empty" android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_6" android:layout_width="40dp" android:layout_height="40dp" android:text="6" android:gravity="center" android:background="@drawable/lotto_ball_empty" android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_7" android:layout_width="40dp" android:layout_height="40dp" android:text="7" android:gravity="center" android:background="@drawable/lotto_ball_empty" android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+
+            </LinearLayout>
+
+            <!-- 8-14 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="8dp">
+
+                <TextView android:id="@+id/btn_num_8" android:layout_width="40dp" android:layout_height="40dp" android:text="8" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_9" android:layout_width="40dp" android:layout_height="40dp" android:text="9" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_10" android:layout_width="40dp" android:layout_height="40dp" android:text="10" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_11" android:layout_width="40dp" android:layout_height="40dp" android:text="11" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_12" android:layout_width="40dp" android:layout_height="40dp" android:text="12" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_13" android:layout_width="40dp" android:layout_height="40dp" android:text="13" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_14" android:layout_width="40dp" android:layout_height="40dp" android:text="14" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+
+            </LinearLayout>
+
+            <!-- 15-21 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="8dp">
+
+                <TextView android:id="@+id/btn_num_15" android:layout_width="40dp" android:layout_height="40dp" android:text="15" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_16" android:layout_width="40dp" android:layout_height="40dp" android:text="16" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_17" android:layout_width="40dp" android:layout_height="40dp" android:text="17" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_18" android:layout_width="40dp" android:layout_height="40dp" android:text="18" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_19" android:layout_width="40dp" android:layout_height="40dp" android:text="19" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_20" android:layout_width="40dp" android:layout_height="40dp" android:text="20" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_21" android:layout_width="40dp" android:layout_height="40dp" android:text="21" android:gravity="center" android:background="@drawable/lotto_ball_empty" android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+
+            </LinearLayout>
+
+            <!-- 22-28 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="8dp">
+
+                <TextView android:id="@+id/btn_num_22" android:layout_width="40dp" android:layout_height="40dp" android:text="22" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_23" android:layout_width="40dp" android:layout_height="40dp" android:text="23" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_24" android:layout_width="40dp" android:layout_height="40dp" android:text="24" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_25" android:layout_width="40dp" android:layout_height="40dp" android:text="25" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_26" android:layout_width="40dp" android:layout_height="40dp" android:text="26" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_27" android:layout_width="40dp" android:layout_height="40dp" android:text="27" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_28" android:layout_width="40dp" android:layout_height="40dp" android:text="28" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+
+            </LinearLayout>
+
+            <!-- 29-35 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="8dp">
+
+                <TextView android:id="@+id/btn_num_29" android:layout_width="40dp" android:layout_height="40dp" android:text="29" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_30" android:layout_width="40dp" android:layout_height="40dp" android:text="30" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_31" android:layout_width="40dp" android:layout_height="40dp" android:text="31" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_32" android:layout_width="40dp" android:layout_height="40dp" android:text="32" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_33" android:layout_width="40dp" android:layout_height="40dp" android:text="33" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_34" android:layout_width="40dp" android:layout_height="40dp" android:text="34" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_35" android:layout_width="40dp" android:layout_height="40dp" android:text="35" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+
+            </LinearLayout>
+
+            <!-- 36-42 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="8dp">
+
+                <TextView android:id="@+id/btn_num_36" android:layout_width="40dp" android:layout_height="40dp" android:text="36" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_37" android:layout_width="40dp" android:layout_height="40dp" android:text="37" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="초기화"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@drawable/button_generate"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</ScrollView>

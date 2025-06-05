@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="back_btn">#F5F7FA</color>
+
+    <!-- Primary Colors -->
+    <color name="primary_blue">#2196F3</color>
+    <color name="primary_blue_dark">#1976D2</color>
+    <color name="primary_blue_light">#BBDEFB</color>
+
+    <!-- Background Colors -->
+    <color name="background_gray">#F5F7FA</color>
+    <color name="card_background">#FFFFFF</color>
+
+    <!-- Text Colors -->
+    <color name="text_dark">#212121</color>
+    <color name="text_gray">#757575</color>
+    <color name="text_light_gray">#BDBDBD</color>
+
+    <!-- Number Colors -->
+    <color name="number_yellow">#FFD700</color>
+    <color name="number_blue">#2196F3</color>
+    <color name="number_red">#FF5722</color>
+    <color name="number_gray">#9E9E9E</color>
+    <color name="number_green">#4CAF50</color>
+
+    <!-- Accent Colors -->
+    <color name="success_green">#4CAF50</color>
+    <color name="warning_orange">#FF9800</color>
+    <color name="error_red">#F44336</color>
+
+    <!-- Border Colors -->
+    <color name="border_light">#E8EAF0</color>
+    <color name="border_gray">#E0E0E0</color>
+
+    <!-- Button Colors -->
+    <color name="button_disabled">#F5F5F5</color>
+    <color name="button_pressed">#E3F2FD</color>
+</resources>
