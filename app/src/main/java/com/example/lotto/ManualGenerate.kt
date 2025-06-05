@@ -12,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.lotto.databinding.ActivityManualGenerateBinding
 
 class ManualGenerate : AppCompatActivity() {
+    // 선택된 번호 임시 저장
     private val selectedNumbers = mutableListOf<Int>()
     private val maxSelectionCount = 6
 
@@ -69,7 +70,8 @@ class ManualGenerate : AppCompatActivity() {
             if (buttonId != 0) {
                 val button = findViewById<TextView>(buttonId)
                 numberButtons[i] = button
-                // 각 버튼에 클릭 리스너 설정하여 해당 번호로 onNumberClick 호출
+                // 각 버튼에 클릭 리스너 설정
+                // 클릭 이벤트 발생 시 해당 번호로 onNumberClick 호출
                 button.setOnClickListener { onNumberClick(i) }
             }
         }
@@ -113,7 +115,7 @@ class ManualGenerate : AppCompatActivity() {
         updateSelectionCount()
     }
 
-    // 버튼 외관 업데이트
+    // 버튼 외관 업데이트(핵심)
     private fun updateNumberButtonAppearance(number: Int, isSelected: Boolean) {
         val button = numberButtons[number] ?: return
 
@@ -143,6 +145,7 @@ class ManualGenerate : AppCompatActivity() {
         }
     }
 
+    // 핵심
     private fun updateSelectedNumbersDisplay() {
         // 선택된 번호들은 index와 비교하여 selectedNumbers 순서대로 위에 표시
         // 선택 취소된 번호들은 위에 표시가 사라지고 기본으로 복원

@@ -71,7 +71,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:padding="8dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -90,8 +90,8 @@
 
                     <TextView
                         android:id="@+id/firstBall"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:background="@drawable/lotto_ball_yellow"
                         android:text="6"
                         android:textColor="@android:color/black"
@@ -102,8 +102,8 @@
 
                     <TextView
                         android:id="@+id/secondBall"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:background="@drawable/lotto_ball_yellow"
                         android:text="5"
                         android:textColor="@android:color/black"
@@ -114,8 +114,8 @@
 
                     <TextView
                         android:id="@+id/thirdBall"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:background="@drawable/lotto_ball_blue"
                         android:text="16"
                         android:textColor="@android:color/black"
@@ -126,8 +126,8 @@
 
                     <TextView
                         android:id="@+id/fourthBall"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:background="@drawable/lotto_ball_red"
                         android:text="26"
                         android:textColor="@android:color/black"
@@ -138,8 +138,8 @@
 
                     <TextView
                         android:id="@+id/fifthBall"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:background="@drawable/lotto_ball_gray"
                         android:text="31"
                         android:textColor="@android:color/black"
@@ -150,8 +150,8 @@
 
                     <TextView
                         android:id="@+id/sixthBall"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:background="@drawable/lotto_ball_green"
                         android:text="42"
                         android:textColor="@android:color/black"

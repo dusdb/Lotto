@@ -37,7 +37,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             app:cardCornerRadius="12dp"
             app:cardElevation="4dp">
@@ -45,15 +45,15 @@
             <LinearLayout
             android:id="@+id/layoutWinningNumbers"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:padding="8dp">
+            android:padding="6dp">
 
                 <TextView
                 android:id="@+id/tvNum1"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:background="@drawable/lotto_ball_yellow"
                 android:text="6"
                 android:textColor="@android:color/black"
@@ -64,8 +64,8 @@
 
                 <TextView
                     android:id="@+id/tvNum2"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:background="@drawable/lotto_ball_yellow"
                     android:text="5"
                     android:textColor="@android:color/black"
@@ -76,8 +76,8 @@
 
                 <TextView
                     android:id="@+id/tvNum3"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:background="@drawable/lotto_ball_blue"
                     android:text="16"
                     android:textColor="@android:color/black"
@@ -88,8 +88,8 @@
 
                 <TextView
                     android:id="@+id/tvNum4"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:background="@drawable/lotto_ball_red"
                     android:text="26"
                     android:textColor="@android:color/black"
@@ -100,8 +100,8 @@
 
                 <TextView
                     android:id="@+id/tvNum5"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:background="@drawable/lotto_ball_gray"
                     android:text="31"
                     android:textColor="@android:color/black"
@@ -112,8 +112,8 @@
 
                 <TextView
                     android:id="@+id/tvNum6"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:background="@drawable/lotto_ball_green"
                     android:text="42"
                     android:textColor="@android:color/black"
@@ -134,8 +134,8 @@
 
                 <TextView
                     android:id="@+id/tvBonus"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:background="@drawable/lotto_ball_orange"
                     android:text="9"
                     android:textColor="@android:color/black"

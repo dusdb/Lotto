@@ -104,11 +104,12 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    // 최근 N회차 당첨번호 로드
+    // 최근 N회차 당첨번호 로드(핵심)
     private fun loadRecentWinningNumbers(count: Int) {
         lifecycleScope.launch {
             try {
                 val winningNumbers = dataManager.getWinningNumber(count)
+                // 당첨번호가 null이 아니면 해당 당첨번호를 추가
                 winningNumbers?.let { addWinningNumberItem(winningNumbers) }
             } catch (e: Exception) {
                 showError("${count}회차 데이터를 불러오는 중 오류: ${e.message}")

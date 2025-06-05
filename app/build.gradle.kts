@@ -53,7 +53,6 @@ dependencies {
 
     // 코루틴 (비동기 처리)
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
-
     implementation ("com.jakewharton.threetenabp:threetenabp:1.4.6")
 
     // ZXing 바코드 스캐너 라이브러리

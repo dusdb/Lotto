@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@drawable/card_background"
-            android:padding="20dp"
+            android:padding="8dp"
             android:layout_marginBottom="24dp"
             android:elevation="4dp">
 
@@ -78,7 +78,7 @@
                     android:background="@drawable/lotto_ball_empty"
                     android:textColor="@color/text_gray"
                     android:textStyle="bold"
-                    android:layout_marginHorizontal="10dp" />
+                    android:layout_marginHorizontal="7dp" />
 
                 <TextView
                     android:id="@+id/tv_selected2"
@@ -89,7 +89,7 @@
                     android:background="@drawable/lotto_ball_empty"
                     android:textColor="@color/text_gray"
                     android:textStyle="bold"
-                    android:layout_marginHorizontal="10dp" />
+                    android:layout_marginHorizontal="7dp" />
 
                 <TextView
                     android:id="@+id/tv_selected3"
@@ -100,7 +100,7 @@
                     android:background="@drawable/lotto_ball_empty"
                     android:textColor="@color/text_gray"
                     android:textStyle="bold"
-                    android:layout_marginHorizontal="10dp" />
+                    android:layout_marginHorizontal="7dp" />
 
                 <TextView
                     android:id="@+id/tv_selected4"
@@ -111,7 +111,7 @@
                     android:background="@drawable/lotto_ball_empty"
                     android:textColor="@color/text_gray"
                     android:textStyle="bold"
-                    android:layout_marginHorizontal="10dp" />
+                    android:layout_marginHorizontal="7dp" />
 
                 <TextView
                     android:id="@+id/tv_selected5"
@@ -122,7 +122,7 @@
                     android:background="@drawable/lotto_ball_empty"
                     android:textColor="@color/text_gray"
                     android:textStyle="bold"
-                    android:layout_marginHorizontal="10dp" />
+                    android:layout_marginHorizontal="7dp" />
 
                 <TextView
                     android:id="@+id/tv_selected6"
@@ -133,7 +133,7 @@
                     android:background="@drawable/lotto_ball_empty"
                     android:textColor="@color/text_gray"
                     android:textStyle="bold"
-                    android:layout_marginHorizontal="10dp" />
+                    android:layout_marginHorizontal="7dp" />
 
             </LinearLayout>
 
@@ -155,7 +155,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@drawable/card_background"
-            android:padding="15dp"
+            android:padding="8dp"
             android:layout_marginBottom="20dp"
             android:elevation="4dp">
 
@@ -168,7 +168,7 @@
                 android:textColor="@color/text_dark"
                 android:layout_marginBottom="16dp" />
 
-            <!-- 1-7 -->
+            <!-- 1-6 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -176,17 +176,16 @@
                 android:gravity="center"
                 android:layout_marginBottom="8dp">
 
-                <TextView android:id="@+id/btn_num_1" android:layout_width="40dp" android:layout_height="40dp" android:text="1" android:gravity="center" android:background="@drawable/lotto_ball_empty" android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_2" android:layout_width="40dp" android:layout_height="40dp" android:text="2" android:gravity="center" android:background="@drawable/lotto_ball_empty" android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_3" android:layout_width="40dp" android:layout_height="40dp" android:text="3" android:gravity="center" android:background="@drawable/lotto_ball_empty" android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_4" android:layout_width="40dp" android:layout_height="40dp" android:text="4" android:gravity="center" android:background="@drawable/lotto_ball_empty" android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_5" android:layout_width="40dp" android:layout_height="40dp" android:text="5" android:gravity="center" android:background="@drawable/lotto_ball_empty" android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_6" android:layout_width="40dp" android:layout_height="40dp" android:text="6" android:gravity="center" android:background="@drawable/lotto_ball_empty" android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_7" android:layout_width="40dp" android:layout_height="40dp" android:text="7" android:gravity="center" android:background="@drawable/lotto_ball_empty" android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_1" android:layout_width="40dp" android:layout_height="40dp" android:text="1" android:gravity="center" android:background="@drawable/lotto_ball_empty" android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_2" android:layout_width="40dp" android:layout_height="40dp" android:text="2" android:gravity="center" android:background="@drawable/lotto_ball_empty" android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_3" android:layout_width="40dp" android:layout_height="40dp" android:text="3" android:gravity="center" android:background="@drawable/lotto_ball_empty" android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_4" android:layout_width="40dp" android:layout_height="40dp" android:text="4" android:gravity="center" android:background="@drawable/lotto_ball_empty" android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_5" android:layout_width="40dp" android:layout_height="40dp" android:text="5" android:gravity="center" android:background="@drawable/lotto_ball_empty" android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_6" android:layout_width="40dp" android:layout_height="40dp" android:text="6" android:gravity="center" android:background="@drawable/lotto_ball_empty" android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
 
             </LinearLayout>
 
-            <!-- 8-14 -->
+            <!-- 7-12 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -194,17 +193,16 @@
                 android:gravity="center"
                 android:layout_marginBottom="8dp">
 
-                <TextView android:id="@+id/btn_num_8" android:layout_width="40dp" android:layout_height="40dp" android:text="8" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_9" android:layout_width="40dp" android:layout_height="40dp" android:text="9" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_10" android:layout_width="40dp" android:layout_height="40dp" android:text="10" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_11" android:layout_width="40dp" android:layout_height="40dp" android:text="11" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_12" android:layout_width="40dp" android:layout_height="40dp" android:text="12" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_13" android:layout_width="40dp" android:layout_height="40dp" android:text="13" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_14" android:layout_width="40dp" android:layout_height="40dp" android:text="14" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_7" android:layout_width="40dp" android:layout_height="40dp" android:text="7" android:gravity="center" android:background="@drawable/lotto_ball_empty" android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_8" android:layout_width="40dp" android:layout_height="40dp" android:text="8" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_9" android:layout_width="40dp" android:layout_height="40dp" android:text="9" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_10" android:layout_width="40dp" android:layout_height="40dp" android:text="10" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_11" android:layout_width="40dp" android:layout_height="40dp" android:text="11" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_12" android:layout_width="40dp" android:layout_height="40dp" android:text="12" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
 
             </LinearLayout>
 
-            <!-- 15-21 -->
+            <!-- 13-18 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -212,17 +210,16 @@
                 android:gravity="center"
                 android:layout_marginBottom="8dp">
 
-                <TextView android:id="@+id/btn_num_15" android:layout_width="40dp" android:layout_height="40dp" android:text="15" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_16" android:layout_width="40dp" android:layout_height="40dp" android:text="16" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_17" android:layout_width="40dp" android:layout_height="40dp" android:text="17" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_18" android:layout_width="40dp" android:layout_height="40dp" android:text="18" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_19" android:layout_width="40dp" android:layout_height="40dp" android:text="19" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_20" android:layout_width="40dp" android:layout_height="40dp" android:text="20" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_21" android:layout_width="40dp" android:layout_height="40dp" android:text="21" android:gravity="center" android:background="@drawable/lotto_ball_empty" android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_13" android:layout_width="40dp" android:layout_height="40dp" android:text="13" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_14" android:layout_width="40dp" android:layout_height="40dp" android:text="14" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_15" android:layout_width="40dp" android:layout_height="40dp" android:text="15" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_16" android:layout_width="40dp" android:layout_height="40dp" android:text="16" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_17" android:layout_width="40dp" android:layout_height="40dp" android:text="17" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_18" android:layout_width="40dp" android:layout_height="40dp" android:text="18" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
 
             </LinearLayout>
 
-            <!-- 22-28 -->
+            <!-- 19-24 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -230,17 +227,16 @@
                 android:gravity="center"
                 android:layout_marginBottom="8dp">
 
-                <TextView android:id="@+id/btn_num_22" android:layout_width="40dp" android:layout_height="40dp" android:text="22" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_23" android:layout_width="40dp" android:layout_height="40dp" android:text="23" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_24" android:layout_width="40dp" android:layout_height="40dp" android:text="24" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_25" android:layout_width="40dp" android:layout_height="40dp" android:text="25" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_26" android:layout_width="40dp" android:layout_height="40dp" android:text="26" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_27" android:layout_width="40dp" android:layout_height="40dp" android:text="27" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_28" android:layout_width="40dp" android:layout_height="40dp" android:text="28" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_19" android:layout_width="40dp" android:layout_height="40dp" android:text="19" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_20" android:layout_width="40dp" android:layout_height="40dp" android:text="20" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_21" android:layout_width="40dp" android:layout_height="40dp" android:text="21" android:gravity="center" android:background="@drawable/lotto_ball_empty" android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_22" android:layout_width="40dp" android:layout_height="40dp" android:text="22" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_23" android:layout_width="40dp" android:layout_height="40dp" android:text="23" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_24" android:layout_width="40dp" android:layout_height="40dp" android:text="24" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
 
             </LinearLayout>
 
-            <!-- 29-35 -->
+            <!-- 25-30 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -248,17 +244,16 @@
                 android:gravity="center"
                 android:layout_marginBottom="8dp">
 
-                <TextView android:id="@+id/btn_num_29" android:layout_width="40dp" android:layout_height="40dp" android:text="29" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_30" android:layout_width="40dp" android:layout_height="40dp" android:text="30" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_31" android:layout_width="40dp" android:layout_height="40dp" android:text="31" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_32" android:layout_width="40dp" android:layout_height="40dp" android:text="32" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_33" android:layout_width="40dp" android:layout_height="40dp" android:text="33" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_34" android:layout_width="40dp" android:layout_height="40dp" android:text="34" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_35" android:layout_width="40dp" android:layout_height="40dp" android:text="35" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_25" android:layout_width="40dp" android:layout_height="40dp" android:text="25" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_26" android:layout_width="40dp" android:layout_height="40dp" android:text="26" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_27" android:layout_width="40dp" android:layout_height="40dp" android:text="27" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_28" android:layout_width="40dp" android:layout_height="40dp" android:text="28" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_29" android:layout_width="40dp" android:layout_height="40dp" android:text="29" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_30" android:layout_width="40dp" android:layout_height="40dp" android:text="30" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
 
             </LinearLayout>
 
-            <!-- 36-42 -->
+            <!-- 31-36 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -266,8 +261,43 @@
                 android:gravity="center"
                 android:layout_marginBottom="8dp">
 
-                <TextView android:id="@+id/btn_num_36" android:layout_width="40dp" android:layout_height="40dp" android:text="36" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
-                <TextView android:id="@+id/btn_num_37" android:layout_width="40dp" android:layout_height="40dp" android:text="37" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="6dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_31" android:layout_width="40dp" android:layout_height="40dp" android:text="31" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_32" android:layout_width="40dp" android:layout_height="40dp" android:text="32" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_33" android:layout_width="40dp" android:layout_height="40dp" android:text="33" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_34" android:layout_width="40dp" android:layout_height="40dp" android:text="34" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_35" android:layout_width="40dp" android:layout_height="40dp" android:text="35" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_36" android:layout_width="40dp" android:layout_height="40dp" android:text="36" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+
+            </LinearLayout>
+
+            <!-- 37-42 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="8dp">
+
+                <TextView android:id="@+id/btn_num_37" android:layout_width="40dp" android:layout_height="40dp" android:text="37" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_38" android:layout_width="40dp" android:layout_height="40dp" android:text="38" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_39" android:layout_width="40dp" android:layout_height="40dp" android:text="39" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_40" android:layout_width="40dp" android:layout_height="40dp" android:text="40" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_41" android:layout_width="40dp" android:layout_height="40dp" android:text="41" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_42" android:layout_width="40dp" android:layout_height="40dp" android:text="42" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+
+            </LinearLayout>
+
+            <!-- 43-45 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="8dp">
+
+                <TextView android:id="@+id/btn_num_43" android:layout_width="40dp" android:layout_height="40dp" android:text="43" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_44" android:layout_width="40dp" android:layout_height="40dp" android:text="44" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
+                <TextView android:id="@+id/btn_num_45" android:layout_width="40dp" android:layout_height="40dp" android:text="45" android:gravity="center" android:background="@drawable/lotto_ball_empty"  android:textStyle="bold" android:layout_marginHorizontal="7dp" android:clickable="true" android:focusable="true" />
 
             </LinearLayout>
         </LinearLayout>

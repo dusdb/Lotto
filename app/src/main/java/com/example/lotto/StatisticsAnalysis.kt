@@ -124,7 +124,7 @@ class StatisticsAnalysis : AppCompatActivity() {
             try {
                 showLoading(true)
 
-                // 데이터 가져오기
+                // 데이터 가져오기(당첨번호, 번호별 빈도)
                 analysisData = dataManager.getWinningNumbers(fromRound, toRound)
                 numberFrequency = dataManager.getNumberFrequency(fromRound, toRound)
 
@@ -164,6 +164,7 @@ class StatisticsAnalysis : AppCompatActivity() {
 
     // 번호별 출현빈도 조회 메서드
     private fun displayFrequencyAnalysis() {
+        // 출현빈도 정렬 후 많이 나온 번호 10개와 적게 나온 번호 10개 각각 저장
         val sortedByFrequency = numberFrequency.toList().sortedByDescending { it.second }
         val frequentNumbers = sortedByFrequency.take(10)
         val rareNumbers = sortedByFrequency.takeLast(10).reversed()
@@ -172,16 +173,13 @@ class StatisticsAnalysis : AppCompatActivity() {
         displayFrequencyNumbers(layoutRareNumbers, rareNumbers)
     }
 
-    // 빈도 번호 구조 생성 메서드 (개선된 버전)
+    // 빈도 번호 구조 생성 메서드 (핵심)
     private fun displayFrequencyNumbers(container: LinearLayout, numbers: List<Pair<Int, Int>>) {
+        // 기존 컨테이너에 있던 데이터 삭제
         container.removeAllViews()
 
         // GridLayout 스타일로 구현
-        val screenWidth = resources.displayMetrics.widthPixels
         val ballSize = (36 * resources.displayMetrics.density).toInt() // 36dp로 크기 축소
-        val margin = (4 * resources.displayMetrics.density).toInt() // 4dp 마진
-        val itemWidth = ballSize + (margin * 2)
-        val itemsPerRow = (screenWidth - 32 * resources.displayMetrics.density) / itemWidth // 좌우 패딩 고려
         val maxItemsPerRow = 5 // 한 줄에 최대 5개씩
 
         var currentRow: LinearLayout? = null
@@ -210,7 +208,7 @@ class StatisticsAnalysis : AppCompatActivity() {
         }
     }
 
-    // 빈도 아이템 뷰 생성 메서드 (개선된 버전)
+    // 빈도 아이템 뷰 생성 메서드
     private fun createFrequencyItemView(number: Int, frequency: Int, ballSize: Int): View {
         // 메인 컨테이너 생성
         val container = LinearLayout(this).apply {
@@ -294,7 +292,7 @@ class StatisticsAnalysis : AppCompatActivity() {
         displayRecommendedNumbers(recommendedNumbers)
     }
 
-    // 추천 번호 통계 분석 메서드
+    // 추천 번호 통계 분석 메서드(핵심)
     // 고빈도 50%, 중빈도 30%, 저빈도 20%
     private fun generateSmartNumbers(): List<Int> {
         val numbers = mutableListOf<Int>()
@@ -338,8 +336,8 @@ class StatisticsAnalysis : AppCompatActivity() {
     private fun createLottoBallView(number: Int): View {
         // RelativeLayout 생성 (컨테이너)
         val container = RelativeLayout(this)
-        val ballSize = (44 * resources.displayMetrics.density).toInt() // 48dp
-        val horizontalMargin  = (8 * resources.displayMetrics.density).toInt() // 8dp
+        val ballSize = (40 * resources.displayMetrics.density).toInt() // 40dp
+        val horizontalMargin  = (6 * resources.displayMetrics.density).toInt() // 6dp
 
         // 배경 View (로또공) 생성
         val ballBackground = View(this)

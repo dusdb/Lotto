@@ -107,6 +107,7 @@ class Simulation : AppCompatActivity() {
         }
     }
 
+    // 시뮬레이션 당첨번호 생성
     private fun generateNewWinningNumbers() {
         val numbers = mutableSetOf<Int>()
         while (numbers.size < 6) {
@@ -116,6 +117,7 @@ class Simulation : AppCompatActivity() {
         bonusNumber = generateBonusNumber(winningNumbers)
     }
 
+    // 시뮬레이션 당첨 보너스 번호 생성
     private fun generateBonusNumber(winningNumbers: List<Int>): Int {
         var bonus: Int
         do {
@@ -180,6 +182,7 @@ class Simulation : AppCompatActivity() {
         winningNumbersContainer.addView(bonusView)
     }
 
+    // 5,10회 뽑기 메서드
     private fun generateAndCheckNumbers(count: Int) {
         generatedNumbersList.clear()
         numberContainer.removeAllViews()
@@ -195,6 +198,7 @@ class Simulation : AppCompatActivity() {
     }
 
 
+    // 당첨번호 기반으로 분석하여 번호 생성(핵심)
     private fun generateLottoNumbers(): List<Int> {
         // 분석 기반 번호 생성 (가중치 적용)
         val weightedNumbers = mutableMapOf<Int, Double>()
@@ -211,7 +215,7 @@ class Simulation : AppCompatActivity() {
             if (num < 45) weightedNumbers[num + 1] = weightedNumbers[num + 1]!! * 1.1
         }
 
-        // 가중치 기반 번호 선택 (순서 유지)
+        // 가중치 기반 번호 선택
         val selectedNumbers = mutableListOf<Int>()
         val availableNumbers = weightedNumbers.keys.toMutableList()
 
@@ -230,9 +234,10 @@ class Simulation : AppCompatActivity() {
             }
         }
 
-        return selectedNumbers // 정렬하지 않고 생성된 순서 그대로 반환
+        return selectedNumbers
     }
 
+    // 당첨 횟수 체크
     private fun checkWinning(numbers: List<Int>): Int {
         val matchCount = numbers.intersect(winningNumbers.toSet()).size
         val bonusMatch = numbers.contains(bonusNumber)
@@ -280,8 +285,6 @@ class Simulation : AppCompatActivity() {
             ).apply {
                 setMargins(0, 8, 0, 8)
             }
-            // 최소 높이 설정으로 짤림 방지
-            minimumHeight = (48 * resources.displayMetrics.density).toInt()
         }
 
         // 번호들을 담을 컨테이너 (왼쪽 정렬)
@@ -295,8 +298,6 @@ class Simulation : AppCompatActivity() {
             ).apply {
                 addRule(RelativeLayout.ALIGN_PARENT_START)
                 addRule(RelativeLayout.CENTER_VERTICAL)
-                // 오른쪽 여백을 두어 등수와 겹치지 않도록
-                marginEnd = (80 * resources.displayMetrics.density).toInt()
             }
         }
 
@@ -325,7 +326,7 @@ class Simulation : AppCompatActivity() {
                 ).apply {
                     addRule(RelativeLayout.ALIGN_PARENT_END)
                     addRule(RelativeLayout.CENTER_VERTICAL)
-                    marginEnd = (16 * resources.displayMetrics.density).toInt()
+                    marginEnd = (20 * resources.displayMetrics.density).toInt()
                 }
             }
             rowContainer.addView(rankView)
@@ -334,6 +335,7 @@ class Simulation : AppCompatActivity() {
         numberContainer.addView(rowContainer)
     }
 
+    // 당첨번호를 담을 뷰 생성
     private fun createNumberView(number: Int): TextView {
         // 당첨 여부 확인 (winningNumbers는 당첨번호 리스트)
         val isWinning = number in winningNumbers || number == bonusNumber
@@ -359,16 +361,10 @@ class Simulation : AppCompatActivity() {
             }
             background = drawable
 
-            /*val size = (39 * resources.displayMetrics.density).toInt()
+            // 밀도 독립적인 크기 설정
+            val size = (35 * resources.displayMetrics.density).toInt()
             val params = LinearLayout.LayoutParams(size, size).apply {
                 setMargins(8, 8, 8, 8)
-            }
-            layoutParams = params*/
-
-            // 밀도 독립적인 크기 설정
-            val size = (42 * resources.displayMetrics.density).toInt()
-            val params = LinearLayout.LayoutParams(size, size).apply {
-                setMargins(4, 4, 4, 4)
             }
             layoutParams = params
 
@@ -378,6 +374,7 @@ class Simulation : AppCompatActivity() {
         }
     }
 
+    // 시뮬레이션 번호를 담을 뷰 생성
     private fun createSmallNumberView(number: Int, color: Int, isWinning: Boolean): TextView {
         return TextView(this).apply {
             text = number.toString()
@@ -399,22 +396,11 @@ class Simulation : AppCompatActivity() {
             }
             background = drawable
 
-            /*val size = (40 * resources.displayMetrics.density).toInt()
+            val size = (35 * resources.displayMetrics.density).toInt()
             val params = LinearLayout.LayoutParams(size, size).apply {
                 setMargins(10, 10, 10, 10)
             }
-            layoutParams = params*/
-
-            // 작은 번호뷰 크기
-            val size = (32 * resources.displayMetrics.density).toInt()
-            val params = LinearLayout.LayoutParams(size, size).apply {
-                setMargins(3, 3, 3, 3)
-            }
             layoutParams = params
-
-            // 최소 크기 설정
-            minWidth = size
-            minHeight = size
         }
     }
 

@@ -65,14 +65,15 @@ class QRScan : AppCompatActivity() {
         barcodeView.setStatusText("QR 코드를 스캔 영역에 맞춰주세요")
     }
 
+    // 핵심
     private fun processQRCode(qrContent: String) {
         try {
             // 로또 QR 코드 형식 분석
-            // 일반적으로 로또 QR 코드는 특정 형식을 가지고 있습니다
-            // 예: "https://dhlottery.co.kr/gameResult.do?method=byWin&drwNo=1234"
+            // 일반적으로 로또 QR 코드는 특정 형식을 가지고 있음
+            // ex "https://dhlottery.co.kr/gameResult.do?method=byWin&drwNo=1234"
 
             // QR코드값 추출해서 값이 나오면 사이트로 이동
-            // 추출이 안되면 에러 메시지나오고 스캔 재시작
+            // 추출이 안되면 에러 메시지 나오고 스캔 재시작
             val drawNumber = extractDrawNumber(qrContent)
 
             if (drawNumber != null) {

@@ -25,7 +25,7 @@ class WinningNumbers : AppCompatActivity() {
     private lateinit var etRound: EditText
     private lateinit var etEndRound: EditText
     private lateinit var btnSearch: ImageButton
-    private lateinit var layoutWinningNumbers: LinearLayout
+    private lateinit var layoutWinningNumbers: LinearLayout // 동적으로 회차별 당첨번호가 추가될 레이아웃
     private lateinit var progressBar: ProgressBar
 
     private val dataManager = LottoDataManager.getInstance()
@@ -61,6 +61,7 @@ class WinningNumbers : AppCompatActivity() {
         progressBar = findViewById(R.id.progressBar)
     }
 
+    // 검색 버튼 메서드
     private fun setupClickListeners() {
         btnSearch.setOnClickListener {
             val fromRound = etRound.text.toString().toIntOrNull()
@@ -101,7 +102,8 @@ class WinningNumbers : AppCompatActivity() {
         }
     }
 
-    // 지정 범위 당첨번호 로드
+    // 지정 범위 당첨번호 로드(핵심)
+    // 로또 API로 당첨번호를 가져와서 사용
     private fun loadWinningNumbers(fromRound: Int, toRound: Int) {
         showLoading(true)
 
@@ -127,6 +129,7 @@ class WinningNumbers : AppCompatActivity() {
 
     // 당첨번호 화면에 표시
     private fun displayWinningNumbers(winningNumbers: List<LottoWinningNumber>) {
+        // 기존 당첨번호 삭제
         layoutWinningNumbers.removeAllViews()
 
         if (winningNumbers.isEmpty()) {
@@ -134,6 +137,7 @@ class WinningNumbers : AppCompatActivity() {
             return
         }
 
+        // 검색한 당첨번호 모두 추가
         winningNumbers.forEach { winningNumber ->
             addWinningNumberItem(winningNumber)
         }
@@ -141,6 +145,7 @@ class WinningNumbers : AppCompatActivity() {
 
     // 당첨번호 아이템 추가
     private fun addWinningNumberItem(winningNumber: LottoWinningNumber) {
+        // 따로 만든 당첨번호 레이아웃 가져와서 사용
         val itemView = LayoutInflater.from(this)
             .inflate(R.layout.activity_lotto_result, layoutWinningNumbers, false)
 
@@ -153,6 +158,7 @@ class WinningNumbers : AppCompatActivity() {
             itemView.findViewById<TextView>(R.id.tvNum5),
             itemView.findViewById<TextView>(R.id.tvNum6)
         )
+        val tvPlus = itemView.findViewById<TextView>(R.id.tvPlus) // + 기호 텍스트뷰
         val tvBonus = itemView.findViewById<TextView>(R.id.tvBonus)
 
         // 회차 정보 설정
@@ -164,10 +170,15 @@ class WinningNumbers : AppCompatActivity() {
             numberViews[index].setBackgroundResource(getColorByNumber(number))
         }
 
+        // + 기호 설정
+        tvPlus.text = "+"
+        tvPlus.visibility = View.VISIBLE
+
         // 보너스 번호 설정
         tvBonus.text = winningNumber.bonusNumber.toString()
         tvBonus.setBackgroundResource(getColorByNumber(winningNumber.bonusNumber))
 
+        // 가져온 레이아웃에 번호와 정보들을 설정 후 추가
         layoutWinningNumbers.addView(itemView)
     }
 
