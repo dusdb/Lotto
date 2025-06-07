@@ -95,7 +95,12 @@ class QRScan : AppCompatActivity() {
         return try {
             // 다양한 형식에 대응하여 QR 코드에서 회차 번호 추출
             when {
-                qrContent.contains("drwNo=") -> {
+                // 실제 로또 QR 형식: https://m.dhlottery.co.kr/qr.do?method=winQr&v=1112xxxxx
+                qrContent.contains("m.dhlottery.co.kr/qr.do") && qrContent.contains("v=") -> {
+                    val regex = "v=(\\d+)".toRegex()
+                    regex.find(qrContent)?.groupValues?.get(1)
+                }
+                qrContent.contains("dhlottery.co.kr") && qrContent.contains("drwNo=") -> {
                     val regex = "drwNo=(\\d+)".toRegex()
                     regex.find(qrContent)?.groupValues?.get(1)
                 }
@@ -103,11 +108,27 @@ class QRScan : AppCompatActivity() {
                     val regex = "draw=(\\d+)".toRegex()
                     regex.find(qrContent)?.groupValues?.get(1)
                 }
-                qrContent.matches("\\d+".toRegex()) -> {
-                    // 숫자만 있는 경우
+                qrContent.matches("\\d{3,4}".toRegex()) -> {
                     qrContent
                 }
-                else -> null
+                // 복잡한 데이터에서 4자리 숫자 찾기
+                qrContent.length > 10 -> {
+                    // 4자리 연속 숫자 찾기 (회차 번호는 보통 1000번대)
+                    val regex = "\\d{4}".toRegex()
+                    val matches = regex.findAll(qrContent).toList()
+
+                    // 1000번대 숫자를 우선적으로 찾기
+                    val drawNumber = matches.find {
+                        val num = it.value.toInt()
+                        num >= 1000 && num <= 9999
+                    }?.value
+
+                    drawNumber
+                }
+
+                else -> {
+                    null
+                }
             }
         } catch (e: Exception) {
             null
