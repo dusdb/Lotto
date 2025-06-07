@@ -12,7 +12,9 @@ import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
 import com.example.lotto.api.LottoApiService
+import com.example.lotto.data.LottoWinningNumber
 import com.example.lotto.databinding.ActivitySimulationBinding
 import com.example.lotto.manager.LottoDataManager
 import kotlinx.coroutines.*
@@ -47,6 +49,9 @@ class Simulation : AppCompatActivity() {
     // 생성된 번호들 저장
     private val generatedNumbersList = mutableListOf<List<Int>>()
 
+    private val dataManager = LottoDataManager.getInstance()
+    private var numberFrequency: List<LottoWinningNumber> = emptyList()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -63,7 +68,6 @@ class Simulation : AppCompatActivity() {
         initViews()
         resetStats()
         setupListeners()
-        loadLatestWinningNumbers()
         displayWinningNumbers()
 
         binding.backBtn.setOnClickListener {
@@ -113,7 +117,7 @@ class Simulation : AppCompatActivity() {
         while (numbers.size < 6) {
             numbers.add(Random.nextInt(1, 46))
         }
-        winningNumbers = numbers.toList().sorted()
+        winningNumbers = numbers.toList()
         bonusNumber = generateBonusNumber(winningNumbers)
     }
 
@@ -124,32 +128,6 @@ class Simulation : AppCompatActivity() {
             bonus = Random.nextInt(1, 46)
         } while (bonus in winningNumbers)
         return bonus
-    }
-
-    private fun loadLatestWinningNumbers() {
-        // LottoDataManager를 사용하여 실제 당첨번호 가져오기
-        CoroutineScope(Dispatchers.Main).launch {
-            try {
-                val dataManager = LottoDataManager.getInstance()
-                val currentRound = dataManager.getCurrentRoundWithTimeThreeTen()
-                val latestData = dataManager.getWinningNumber(currentRound)
-
-                latestData?.let { data ->
-                    winningNumbers = data.getMainNumbers()
-                    bonusNumber = data.bonusNumber
-                } ?: run {
-                    // API에서 데이터를 가져올 수 없는 경우 랜덤 번호 생성
-                    val randomNumbers = (1..45).shuffled().take(6).sorted()
-                    winningNumbers = randomNumbers
-                    bonusNumber = (1..45).filter { !randomNumbers.contains(it) }.random()
-                }
-            } catch (e: Exception) {
-                // 에러 발생 시 랜덤 번호 생성
-                val randomNumbers = (1..45).shuffled().take(6).sorted()
-                winningNumbers = randomNumbers
-                bonusNumber = (1..45).filter { !randomNumbers.contains(it) }.random()
-            }
-        }
     }
 
     private fun displayWinningNumbers() {
@@ -198,43 +176,13 @@ class Simulation : AppCompatActivity() {
     }
 
 
-    // 당첨번호 기반으로 분석하여 번호 생성(핵심)
+    // 랜덤으로 시뮬레이션 번호 생성(핵심)
     private fun generateLottoNumbers(): List<Int> {
-        // 분석 기반 번호 생성 (가중치 적용)
-        val weightedNumbers = mutableMapOf<Int, Double>()
-
-        // 기본 가중치 설정
-        for (i in 1..45) {
-            weightedNumbers[i] = 1.0
+        val numbers = mutableSetOf<Int>()
+        while (numbers.size < 6) {
+            numbers.add(Random.nextInt(1, 46))
         }
-
-        // 최근 당첨번호 주변 숫자에 가중치 부여
-        winningNumbers.forEach { num ->
-            weightedNumbers[num] = weightedNumbers[num]!! * 1.2
-            if (num > 1) weightedNumbers[num - 1] = weightedNumbers[num - 1]!! * 1.1
-            if (num < 45) weightedNumbers[num + 1] = weightedNumbers[num + 1]!! * 1.1
-        }
-
-        // 가중치 기반 번호 선택
-        val selectedNumbers = mutableListOf<Int>()
-        val availableNumbers = weightedNumbers.keys.toMutableList()
-
-        while (selectedNumbers.size < 6) {
-            val totalWeight = availableNumbers.sumOf { weightedNumbers[it] ?: 0.0 }
-            val randomValue = Random.nextDouble() * totalWeight
-
-            var currentWeight = 0.0
-            for (number in availableNumbers) {
-                currentWeight += weightedNumbers[number] ?: 0.0
-                if (randomValue <= currentWeight) {
-                    selectedNumbers.add(number)
-                    availableNumbers.remove(number)
-                    break
-                }
-            }
-        }
-
-        return selectedNumbers
+        return numbers.toList()
     }
 
     // 당첨 횟수 체크
@@ -270,8 +218,23 @@ class Simulation : AppCompatActivity() {
     private fun displayGeneratedNumbers() {
         numberContainer.removeAllViews() // ScrollView가 아닌 내부 컨테이너에서 제거
         generatedNumbersList.forEachIndexed { index, numbers ->
-            val rank = checkWinning(numbers)
+            val rank = checkWinningWithoutCounting(numbers)
             addNumberRowToGrid(numbers, rank)
+        }
+    }
+
+    // 카운팅하지 않고 등수만 반환하는 메서드
+    private fun checkWinningWithoutCounting(numbers: List<Int>): Int {
+        val matchCount = numbers.intersect(winningNumbers.toSet()).size
+        val bonusMatch = numbers.contains(bonusNumber)
+
+        return when {
+            matchCount == 6 -> 1
+            matchCount == 5 && bonusMatch -> 2
+            matchCount == 5 -> 3
+            matchCount == 4 -> 4
+            matchCount == 3 -> 5
+            else -> 0
         }
     }
 
